@@ -4,6 +4,7 @@ import 'package:app/features/displayMenuItems/business/usecases/get_menu_item.da
 import 'package:app/features/displayMenuItems/business/usecases/get_menu_item_types.dart';
 import 'package:app/features/displayMenuItems/data/datasources/menu_item_remote_data_source.dart';
 import 'package:app/features/displayMenuItems/data/repositories/menu_item_repository_impl.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class MenuItemTypesProvider extends ChangeNotifier {
         dio: Dio(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 
@@ -69,7 +70,7 @@ class MenuItemTypesProvider extends ChangeNotifier {
         dio: Dio(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 

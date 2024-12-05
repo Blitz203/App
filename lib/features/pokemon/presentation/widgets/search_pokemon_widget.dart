@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -115,7 +116,7 @@ class SearchPokemonWidget extends StatelessWidget {
                   .eitherFailureOrPokemon(
                 value: (selectedPokemonItem.number + 1).toString(),
               );
-              if (await NetworkInfoImpl(DataConnectionChecker()).isConnected ==
+              if (await NetworkInfoImpl(Connectivity()).isConnected ==
                   false) {
                 scaffoldMessengerState.clearSnackBars();
                 scaffoldMessengerState.showSnackBar(

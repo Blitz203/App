@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 
 import 'package:dio/dio.dart';
@@ -32,7 +33,7 @@ class TemplateProvider extends ChangeNotifier {
         sharedPreferences: await SharedPreferences.getInstance(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 

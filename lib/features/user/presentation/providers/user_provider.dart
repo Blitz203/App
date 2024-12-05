@@ -5,6 +5,7 @@ import 'package:app/features/user/business/usecases/init_user_session.dart';
 import 'package:app/features/user/data/datasources/token_local_datasource.dart';
 import 'package:app/features/user/data/datasources/token_remote_datasource.dart';
 import 'package:app/features/user/data/repositories/token_repository_impl.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class UserProvider extends ChangeNotifier {
         dio: Dio(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 
@@ -71,7 +72,7 @@ class UserProvider extends ChangeNotifier {
         authenticatedDioClient: AuthenticatedDioClient(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 
@@ -121,7 +122,7 @@ class UserProvider extends ChangeNotifier {
         authenticatedDioClient: AuthenticatedDioClient(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 

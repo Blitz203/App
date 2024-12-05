@@ -11,3 +11,4 @@ class CheckTokenExpiration {
         isTokenExpiredParams: isTokenExpiredParams);
   }
 }
+  

@@ -1,4 +1,5 @@
 import 'package:app/features/pokemon_image/business/repositories/pokemon_Image_repository.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 
 import 'package:dio/dio.dart';
@@ -33,7 +34,7 @@ class PokemonImageProvider extends ChangeNotifier {
         sharedPreferences: await SharedPreferences.getInstance(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 

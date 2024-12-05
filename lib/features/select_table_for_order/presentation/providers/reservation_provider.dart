@@ -1,4 +1,5 @@
 import 'package:app/features/select_table_for_order/business/entities/reservation_entity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class ReservationProvider extends ChangeNotifier {
         dio: Dio(),
       ),
       networkInfo: NetworkInfoImpl(
-        DataConnectionChecker(),
+        Connectivity(),
       ),
     );
 
